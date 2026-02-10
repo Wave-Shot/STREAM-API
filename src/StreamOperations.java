@@ -2,10 +2,10 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(2,4,6,8,10);
-        int min = list.stream().min(Integer::compare).get();
-        int max = list.stream().max(Integer::compare).get();
-        System.out.println("Min: " + min);
-        System.out.println("Max: " + max);
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+        int sum = list.stream().mapToInt(Integer::intValue).sum();
+        double avg = list.stream().mapToInt(Integer::intValue).average().getAsDouble();
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + avg);
     }
 }
