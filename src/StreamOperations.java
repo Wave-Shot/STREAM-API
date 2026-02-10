@@ -1,12 +1,11 @@
 import java.util.*;
-import java.util.stream.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8);
-        List<Integer> even = list.stream()
+        List<Integer> list = Arrays.asList(1,3,5,6,8);
+        Optional<Integer> firstEven = list.stream()
                 .filter(n -> n % 2 == 0)
-                .collect(Collectors.toList());
-        System.out.println(even);
+                .findFirst();
+        System.out.println(firstEven.get());
     }
 }
